@@ -1,0 +1,14 @@
+{
+  "name": "task_management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass scss/main.scss css/style.css -w"
+  },
+  "author": "George Kandelaki",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.80.6"
+  }
+}
