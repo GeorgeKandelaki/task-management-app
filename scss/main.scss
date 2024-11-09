@@ -1,3 +1,11 @@
+$color-blue-dark-1: #003135;
+$color-blue-dark-2: #024950;
+$color-blue-light-1: #afdde5;
+
+$color-orange-light-1: #964734;
+
+$color-cyan-normal-1: #0fa4af;
+
 *,
 *::before,
 *::after {
@@ -15,7 +23,16 @@ body {
     font-size: 1.6rem;
 }
 
+.main {
+}
+
 .tasks {
+}
+
+.taskbox {
+}
+
+.task {
 }
 
 .sidebar {
