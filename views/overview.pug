@@ -1,0 +1,27 @@
+extends base
+
+block content 
+    main.overview
+        .task-manager
+            h1.heading-primary.task-manager__heading Task Manager
+
+            .task-manager__container
+                each taskBox in taskBoxes
+                    .taskbox
+                        .taskbox__name(id=`${taskBox.id}`)
+                            span.taskbox__content #{taskBox.name}
+                            img.taskbox__icon(src="/images/devImages/arrowr.svg", alt="Arrow Right")
+                .task-manager__add-container
+                    input.task-manager__add-input(type="text", placeholder="Create a Task Box...")
+                    .task-manager__add-icon
+                        img(src="/images/devImages/plus.svg", alt="Add Icon")
+
+        .tasks
+            .tasks__container
+                .tasks__empty
+
+            //- .tasks__add-container
+            //-     input.tasks__add-input(type="text", placeholder="Write a Task...")
+            //-     .tasks__add-icon
+            //-         img(src="/images/devImages/plus.svg", alt="Add Icon")
+

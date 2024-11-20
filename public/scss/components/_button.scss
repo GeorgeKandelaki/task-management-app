@@ -1,0 +1,19 @@
+.btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+
+    &--login,
+    &--signup {
+        background-color: $color-white;
+        border-radius: 150rem;
+        padding: 2.5rem 5rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

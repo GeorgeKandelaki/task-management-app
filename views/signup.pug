@@ -1,0 +1,23 @@
+extends base
+
+block content 
+    .signup
+        form.form.form--signup
+            h1.heading-primary.form__title Register
+            .form__field-box
+                input.form__field.form__name(type="text" placeholder="Username")
+                .form__icon
+                    img(src="/images/devImages/user.svg" alt="icon")
+            .form__field-box
+                input.form__field.form__email(type="email" placeholder="Email")
+                .form__icon
+                    img(src="/images/devImages/email.svg" alt="icon")
+            .form__field-box
+                input.form__field.form__password(type="password" placeholder="Password")
+                .form__icon
+                    img(src="/images/devImages/lock.svg" alt="icon")
+            .form__field-box
+                input.form__field.form__password-confirm(type="password" placeholder="Confirm Password")
+                .form__icon
+                    img(src="/images/devImages/lock-confirm.svg" alt="icon")
+            button.btn.btn--signup.form__btn Sign Up

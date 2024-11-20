@@ -1,0 +1,26 @@
+.content--disable {
+    display: none;
+}
+
+.alert {
+    position: absolute;
+    top: 5%;
+    right: 0;
+
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $color-white;
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid $color-white;
+    border-radius: 1rem;
+    transform: translate(-3%, 50%);
+
+    &--error {
+        background-color: $alert-red;
+    }
+
+    &--success {
+        background-color: $alert-green;
+    }
+}

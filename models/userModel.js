@@ -6,6 +6,7 @@ const crypto = require("crypto");
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
+        trim: true,
         required: [true, "User must have a Name!"],
         minLength: [5, "Name should be equal or more than 5 charachters!"],
         maxLength: [30, "Name should be equal or less than 30 charachters!"],
@@ -14,44 +15,68 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "User must have a Email"],
         unique: true,
+        trim: true,
         validate: [validator.isEmail, "Please Provide a Valid Email!"],
     },
     avatar: {
         type: String,
         default: "default.jpg",
     },
-    tasks: {
-        type: mongoose.Schema.ObjectId,
-        ref: "taskBox",
-    },
+    // tasks: [
+    //     {
+    //         type: mongoose.Schema.ObjectId,
+    //         ref: "TaskBox",
+    //     },
+    // ],
     password: {
         type: String,
+        trim: true,
         required: [true, "User must have a password"],
         minLength: [8, "Password should be equal or more than 8 charachters!"],
         maxLength: [40, "Password should be equal or less than 40 charachters!"],
+        select: false,
     },
     passwordConfirm: {
         type: String,
+        trim: true,
         required: [true, "Please Confirm your !Password"],
-        validate: { validator: function () {}, message: "Passwords are not the same!" },
+        validate: {
+            validator: function (el) {
+                return el === this.password;
+            },
+            message: "Passwords are not the same!",
+        },
+    },
+    role: {
+        type: String,
+        enum: ["user", "admin"],
+        default: "user",
     },
 });
 
 userSchema.set("toJSON", { virtuals: true });
 userSchema.set("toObject", { virtuals: true });
 
+userSchema.virtual("tasks", {
+    ref: "TaskBox",
+    foreignField: "user",
+    localField: "_id",
+});
+
 // Populate Tasks
 userSchema.pre(/^find/, function (next) {
     this.populate({
         path: "tasks",
     });
+
+    return next();
 });
 
-// Hast the Password
+// Hash the Password
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();
 
-    this.password = await bcrypt.hash(this.password, 127);
+    this.password = await bcrypt.hash(this.password, 12);
 
     this.passwordConfirm = undefined;
 

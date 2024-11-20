@@ -1,0 +1,15 @@
+@mixin centerInputFieldIcon() {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -45%);
+}
+
+@mixin addImageInBackground($image) {
+    background-image: url($image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}

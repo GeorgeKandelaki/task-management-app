@@ -1,0 +1,15 @@
+extends base
+
+block content 
+    .login
+        form.form.form--login
+            h1.heading-primary.form__title Authenticate 
+            .form__field-box
+                input.form__field.form__email(type="email" placeholder="Email")
+                .form__icon
+                    img(src="/images/devImages/email.svg" alt="icon")
+            .form__field-box
+                input.form__field.form__password(type="password" placeholder="Password")
+                .form__icon
+                    img(src="/images/devImages/lock.svg" alt="icon")
+            button.btn.btn--login.form__btn Log In
