@@ -1,0 +1,19 @@
+header.header
+    .header__nav
+        h2.heading-secondary.header__home
+            a(href="/") HOME
+        
+    if user
+        .header__user 
+            .header__user-logout 
+                a.header__user-logout-link(href="/logout") Log Out
+            .header__user-img 
+                a.header__user-link(href="/me") 
+                    img(src=`/images/users/${user.avatar}`, alt="Image of the User")
+                
+            .header__user-content 
+                p.header__user-name #{user.name.split(" ")[0].toUpperCase()}
+    else
+        .header__links
+            a.btn.btn__signup-link(href="/signup") Sign Up
+            a.btn.btn__login-link(href="/login") Log In

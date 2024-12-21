@@ -1,140 +1,142 @@
 body {
-    width: 100%;
-    height: 100vh;
+	width: 100%;
+	min-height: 100vh;
 
-    @include addImageInBackground("/images/devImages/mbg-image.webp");
+	@include addImageInBackground("/images/devImages/mbg-image.webp");
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// justify-content: center;
 }
 
 .overview {
-    width: 98%;
-    height: 97%;
+	width: 99%;
+	min-height: 100vh;
+	margin: 2rem 1rem;
 
-    backdrop-filter: blur(2rem);
-    border: 1px solid rgba($color-white, 0.47);
-    border-radius: 2rem;
+	backdrop-filter: blur(2rem);
+	border: 1px solid rgba($color-white, 0.47);
+	border-radius: 2rem;
 
-    display: grid;
-    grid-template-columns: 0.9fr 2fr;
+	display: grid;
+	grid-template-columns: 0.9fr 2fr;
 }
 
 .task-manager {
-    padding-right: 3.2rem;
-    margin: 3.2rem;
-    border-right: 1px solid rgba($color-white, 0.47);
-    position: relative;
+	padding-right: 3.2rem;
+	margin: 3.2rem;
+	border-right: 1px solid rgba($color-white, 0.47);
+	position: relative;
 
-    &__container {
-        max-height: calc(79vh);
-        overflow-y: auto;
-        overflow-x: clip;
-    }
+	&__container {
+		max-height: calc(79vh);
+		overflow-y: auto;
+		overflow-x: clip;
+	}
 
-    &__heading {
-        text-align: center;
-        font-weight: 100;
-        border-bottom: 2px solid rgba($color-white, 0.47);
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
-    }
+	&__heading {
+		text-align: center;
+		font-weight: 100;
+		border-bottom: 2px solid rgba($color-white, 0.47);
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+	}
 
-    &__add-container {
-        width: 96%;
-        position: absolute;
-        bottom: 5%;
-        left: 47%;
-        transform: translate(-50%, 90%);
-    }
+	&__add-container {
+		width: 96%;
+		position: absolute;
+		bottom: 5%;
+		left: 47%;
+		transform: translate(-50%, 90%);
+	}
 
-    &__add-input {
-        width: 100%;
-        border: 1px solid rgba($color-white, 0.47);
-        border-radius: 15rem;
-        padding: 2rem 3rem;
-        font-size: 2rem;
-        background-color: transparent;
-        outline: none;
-        color: $color-white;
+	&__add-input {
+		width: 100%;
+		border: 1px solid rgba($color-white, 0.47);
+		border-radius: 15rem;
+		padding: 2rem 3rem;
+		font-size: 2rem;
+		background-color: transparent;
+		outline: none;
+		color: $color-white;
 
-        &:focus {
-            outline: 2px solid $color-white;
-        }
-    }
+		&:focus {
+			outline: 2px solid $color-white;
+		}
+	}
 
-    &__add-icon {
-        position: absolute;
-        @include centerInputFieldIcon();
-        cursor: pointer;
-        transition: opacity 0.3s;
+	&__add-icon {
+		position: absolute;
+		@include centerInputFieldIcon();
+		cursor: pointer;
+		transition: opacity 0.3s;
 
-        &:hover {
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			opacity: 0.5;
+		}
+	}
 }
 
 .tasks {
-    margin: 3.2rem 3.2rem 3.2rem 0;
-    position: relative;
+	margin: 3.2rem 3.2rem 3.2rem 0;
+	position: relative;
 
-    &__container {
-        max-height: calc(79vh);
-        height: 100%;
-        overflow-y: auto;
-        // overflow-x: clip;
-        padding-right: 1.5rem;
+	&__container {
+		max-height: calc(79vh);
+		height: 100%;
+		overflow-y: auto;
 
-        position: relative;
-    }
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 
-    &__add-container {
-        width: 55%;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 90%);
+	&__add-container {
+		width: 55%;
+		position: absolute;
+		bottom: 5%;
+		left: 50%;
+		transform: translate(-50%, 90%);
 
-        position: relative;
-    }
+		position: absolute;
+	}
 
-    &__add-input {
-        width: 100%;
-        border: 1px solid rgba($color-white, 0.47);
-        border-radius: 15rem;
-        padding: 2rem 3rem;
-        font-size: 2rem;
-        background-color: transparent;
-        outline: none;
-        color: $color-white;
+	&__add-input {
+		width: 100%;
+		border: 1px solid rgba($color-white, 0.47);
+		border-radius: 15rem;
+		padding: 2rem 3rem;
+		font-size: 2rem;
+		background-color: transparent;
+		outline: none;
+		color: $color-white;
 
-        &:focus {
-            outline: 2px solid $color-white;
-        }
-    }
+		&:focus {
+			outline: 2px solid $color-white;
+		}
+	}
 
-    &__add-icon {
-        position: absolute;
-        @include centerInputFieldIcon();
-        cursor: pointer;
-        transition: opacity 0.3s;
+	&__add-box {
+		position: absolute;
+		@include centerInputFieldIcon();
+		cursor: pointer;
+		transition: opacity 0.3s;
 
-        &:hover {
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			opacity: 0.5;
+		}
+	}
 
-    &__empty {
-        width: 50rem;
-        height: 50rem;
-        border: 5px solid rgba($color-white, 0.25);
-        border-radius: 50%;
+	&__empty {
+		width: 50rem;
+		height: 50rem;
+		border: 5px solid rgba($color-white, 0.25);
+		border-radius: 50%;
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }

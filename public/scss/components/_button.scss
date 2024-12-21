@@ -1,19 +1,64 @@
 .btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
+	width: 100%;
+	border: none;
+	text-align: center;
+	cursor: pointer;
 
-    &--login,
-    &--signup {
-        background-color: $color-white;
-        border-radius: 150rem;
-        padding: 2.5rem 5rem;
-        font-size: 2.5rem;
-        font-weight: 700;
-        transition: opacity 0.3s;
+	&--login,
+	&--signup {
+		background-color: $color-white;
+		border-radius: 150rem;
+		padding: 2.5rem 5rem;
+		font-size: 2.5rem;
+		font-weight: 700;
+		transition: opacity 0.3s;
 
-        &:hover {
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	&--save {
+		padding: 1.5rem 2rem;
+		color: $color-white;
+		border: 1px solid rgba($color-white, 0.47);
+		border-radius: 1rem;
+		background-color: transparent;
+		transition: all 0.3s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	&__signup-link,
+	&__login-link {
+		padding: 1rem;
+		color: $color-white;
+		border: 1px solid rgba($color-white, 0.47);
+		border-radius: 0.5rem;
+		backdrop-filter: blur(1rem);
+		transition: all 0.3s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	&--delete-acc {
+		padding: 1.5rem 2rem;
+		background-color: transparent;
+		backdrop-filter: blur(1rem);
+		border: 1px solid rgba($alert-red, 0.47);
+		border-radius: 1rem;
+		font-size: 1.8rem;
+		font-weight: 500;
+		transition: all 0.3s;
+		color: $alert-red;
+
+		&:hover {
+			opacity: 0.5;
+			transform: translateY(0.5rem);
+		}
+	}
 }

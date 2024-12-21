@@ -1,24 +1,126 @@
 .task {
-    border: 1px solid rgba($color-white, 0.2);
-    border-radius: 1rem;
-    padding: 2rem;
+	border: 1px solid rgba($color-white, 0.2);
+	border-radius: 1rem;
+	padding: 2rem;
+	width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-    &__task {
-    }
+	&__task {
+	}
 
-    &__content {
-        font-size: 2.2rem;
-        font-weight: 500;
-        color: $color-white;
-    }
+	&__edit {
+		width: 80%;
+		position: relative;
 
-    &__button {
-    }
+		&-input {
+			width: 100%;
+			border: 1px solid rgba($color-white, 0.47);
+			border-radius: 15rem;
+			padding: 2rem 3rem;
+			font-size: 2rem;
+			background-color: transparent;
+			outline: none;
+			color: $color-white;
 
-    &__checkbox {
-    }
+			&:focus {
+				outline: 2px solid $color-white;
+			}
+		}
+
+		&-input-icon {
+			position: absolute;
+			top: 47%;
+			right: 0;
+			transform: translate(-50%, -45%);
+			cursor: pointer;
+			transition: opacity 0.3s;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&--completed {
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+	}
+
+	&__text {
+		font-size: 2.2rem;
+		font-weight: 500;
+		color: $color-white;
+	}
+
+	&__checked {
+		transition: all 0.3s;
+		text-decoration: line-through;
+		opacity: 0.5;
+	}
+
+	&__button {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+	}
+
+	&__checkmark {
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&::before {
+			content: "";
+			display: block;
+			height: 3.5rem;
+			width: 3.5rem;
+			border: 1px solid rgba($color-white, 0.5);
+			border-radius: 50%;
+
+			position: absolute;
+			top: 50%;
+			right: 0;
+			z-index: -1000;
+			transform: translate(0, -45%);
+			transition: transform 0.2s;
+		}
+	}
+
+	&__checkbox {
+		outline: none;
+		cursor: pointer;
+		appearance: none;
+
+		width: 4rem;
+		height: 4rem;
+		background-color: 0.3s;
+
+		&:checked + .task__checkmark::before {
+			background-color: $color-white;
+		}
+	}
+
+	&__options {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		& img {
+			cursor: pointer;
+			transition: opacity 0.3s;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
 }

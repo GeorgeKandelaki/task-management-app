@@ -1,0 +1,40 @@
+extends base
+
+block content 
+    main.profile
+        .profile__container
+            .profile__sidebar
+                p.profile__link
+                    a(href="#") Settings
+
+            .profile__content
+                .profile__account
+                    h2.heading-secondary.profile__heading Your Account Settings
+                    form.profile__form.profile__form-update
+                        .profile__form-box
+                            label.profile__form-name(for="name") Name
+                            input#name.profile__form-field(type="text" name="name" placeholder=`${user.name}`)
+
+                        .profile__form-box
+                            label.profile__form-name(for="email") Email Address
+                            input#email.profile__form-field(type="text" name="email" placeholder=`${user.email}`)
+
+                        button.profile__save.btn--save(type="submit") SAVE SETTINGS
+                
+                .profile__change-password
+                    h2.heading-secondary.profile__heading Change Your Passwords
+                    form.profile__form.profile__form-password
+                        .profile__form-box
+                            label.profile__form-name(for="password") Current Password
+                            input#current-password.profile__form-field(type="password" name="password" placeholder=`Your Current Password...`)
+
+                        .profile__form-box
+                            label.profile__form-name(for="new-password") New Password
+                            input#new-password.profile__form-field(type="password" name="new-password" placeholder=`New Password...`)
+
+                        .profile__form-box
+                            label.profile__form-name(for="new-password-confirm") Repeat New Password
+                            input#new-password-confirm.profile__form-field(type="password" name="new-password-confirm" placeholder=`Repeat New Password...`)
+
+                        button.profile__save.btn--save(type="submit") CHANGE PASSWORD
+                button.btn.btn--delete-acc DELETE ACCOUNT

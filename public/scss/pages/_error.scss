@@ -1,0 +1,35 @@
+.main:has(.error) {
+	display: flex;
+	align-items: center;
+}
+
+.error {
+	width: 100%;
+	margin: 0 9.6rem;
+	color: $color-white;
+	backdrop-filter: blur(1.5rem);
+	padding: 3rem 4rem;
+	border-radius: 1rem;
+	border: 1px solid rgba($color-white, 0.47);
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	&__emoji {
+		font-size: 2.5rem;
+	}
+
+	&__msg {
+		width: 100%;
+		font-size: 600;
+
+		font-size: 2rem;
+	}
+}

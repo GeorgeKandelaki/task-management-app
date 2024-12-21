@@ -4,13 +4,19 @@ const authController = require("./../controllers/authController");
 
 const router = express.Router();
 
-// Authorization
+// Authorization. Public Routes (No Authentication/Authorization required)
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 
-// Restrict This to Only Admins
-router.use(authController.protect, authController.restrictTo(["admin"]));
+// Protected Routes (Authentication/Authorization required)
+router.use(authController.protect);
+router.patch("/change_password", authController.changePassword);
+router.patch("/update_me", userController.updateMe);
+router.delete("/delete_me", userController.deleteMe);
+
+// Admin-Only Routes (Authentication/Authorization + Admin role required)
+router.use(authController.restrictTo(["admin"]));
 router.get("/", userController.getAll);
-router.get("/:id", userController.getOne);
+router.route("/:id").get(userController.getOne);
 
 module.exports = router;

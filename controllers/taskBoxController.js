@@ -1,15 +1,14 @@
 const TaskBox = require("./../models/taskBoxModel");
 const handlerFactory = require("./handlerFactory");
 
-exports.createOne = async function (req, res, next) {
-    req.body.user = req.user.id;
-    return await handlerFactory.createOne(TaskBox)(req, res, next);
-};
-exports.getAll = handlerFactory.getAll(TaskBox);
+// exports.getAll = handlerFactory.getAll(TaskBox, { createdAt: 1 });
 exports.getOne = handlerFactory.getOne(TaskBox);
 exports.deleteOne = handlerFactory.deleteOne(TaskBox);
 exports.updateOne = handlerFactory.updateOne(TaskBox);
-exports.getMany = async function (req, res, next) {
-    req.body.user = req.user.id;
-    return await handlerFactory.getMany(TaskBox)(req, res, next);
+exports.getMany = handlerFactory.getMany(TaskBox, { createdAt: 1 });
+exports.createOne = handlerFactory.createOne(TaskBox);
+
+exports.setUser = (req, res, next) => {
+	if (!req.body.user) req.body.user = req.user.id;
+	return next();
 };

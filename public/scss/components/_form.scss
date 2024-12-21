@@ -1,58 +1,76 @@
 .form {
-    border: 1px solid $color-white;
-    border-radius: 2rem;
-    backdrop-filter: blur(1rem);
-    padding: 6rem 4.8rem;
-    max-width: 60rem;
-    width: 100%;
-    text-align: center;
+	border: 1px solid $color-white;
+	border-radius: 2rem;
+	backdrop-filter: blur(1rem);
+	padding: 6rem 4.8rem;
+	max-width: 60rem;
+	width: 100%;
+	text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3.2rem;
 
-    &__title {
-        margin-bottom: 2.5rem;
-    }
+	&__title {
+		margin-bottom: 2.5rem;
+	}
 
-    &__field-box {
-        width: 100%;
-        position: relative;
-    }
+	&__field-box {
+		width: 100%;
+		position: relative;
+	}
 
-    &__icon {
-        @include centerInputFieldIcon();
-    }
+	&__icon {
+		@include centerInputFieldIcon();
+	}
 
-    &__field {
-        width: 100%;
-        padding: 2.5rem 5rem;
-        background-color: transparent;
-        border: none;
-        border: 1px solid $color-white;
-        border-radius: 15rem;
-        outline: none;
-        font-size: 2rem;
-        color: $color-white;
-        transition: border-color 0.2s;
+	&__field {
+		width: 100%;
+		padding: 2.5rem 5rem;
+		background-color: transparent;
+		border: none;
+		border: 1px solid $color-white;
+		border-radius: 15rem;
+		outline: none;
+		font-size: 2rem;
+		color: $color-white;
+		transition: border-color 0.2s;
 
-        &:focus {
-            border-color: transparent;
-            outline: 3px solid $color-white;
-        }
+		&:focus {
+			border-color: transparent;
+			outline: 3px solid $color-white;
+		}
 
-        &::placeholder {
-            color: rgba($color-white, 0.47);
-        }
-    }
+		&::placeholder {
+			color: rgba($color-white, 0.47);
+		}
+	}
 
-    &__btn {
-        margin-top: 3.2rem;
-    }
+	&__btn {
+		margin-top: 3.2rem;
+	}
 
-    @media only screen and (max-width: 37.5em) {
-        border: none;
-        padding: 2rem auto;
-    }
+	&__text {
+		font-size: 1.8rem;
+		color: rgba($color-white, 0.9);
+
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__link {
+		color: lightseagreen;
+		text-decoration: underline;
+		transition: all 0.3s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	@media only screen and (max-width: 37.5em) {
+		border: none;
+		padding: 2rem auto;
+	}
 }

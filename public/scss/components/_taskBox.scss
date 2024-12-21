@@ -1,65 +1,102 @@
 .taskbox {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
 
-    max-width: 55rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid rgba($color-white, 0.2);
+	width: 100%;
+	padding: 2.5rem 0;
+	border-bottom: 1px solid rgba($color-white, 0.2);
 
-    &__name {
-        max-width: 50rem;
+	&__name {
+		width: 100%;
 
-        font-size: 2.4rem;
-        font-weight: 100;
-        color: $color-white;
+		font-size: 2.4rem;
+		font-weight: 100;
+		color: $color-white;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transition: transform 0.3s, opacity 0.3s;
-        cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		transition: transform 0.3s, opacity 0.3s;
+		cursor: pointer;
 
-        &:hover {
-            transform: translateX(1rem);
-            opacity: 0.5;
-        }
-    }
+		&:hover {
+			transform: translateX(1rem);
+			opacity: 0.5;
+		}
+	}
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-        border-bottom: 2px solid rgba($color-white, 0.47);
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
-    }
+		border-bottom: 2px solid rgba($color-white, 0.47);
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
 
-    &__name-1 {
-        font-weight: 100;
-    }
+		position: relative;
+	}
 
-    &__icon {
-    }
+	&__name-1 {
+		font-weight: 100;
+	}
 
-    &__options {
-        margin-right: 0.5rem;
-        display: flex;
-        gap: 1rem;
+	&__icon {
+	}
 
-        & img {
-            cursor: pointer;
-            transition: opacity 0.3s;
+	&__options {
+		margin-right: 0.5rem;
 
-            &:hover {
-                opacity: 0.5;
-            }
-        }
-    }
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 
-    &--active {
-        transform: translateX(1rem);
-        opacity: 0.5;
-    }
+		& img {
+			cursor: pointer;
+			transition: opacity 0.3s;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&--active {
+		transform: translateX(1rem);
+		opacity: 0.5;
+	}
+
+	&__edit {
+		width: 80%;
+		position: relative;
+
+		&-input {
+			width: 100%;
+			border: 1px solid rgba($color-white, 0.47);
+			border-radius: 15rem;
+			padding: 2rem 3rem;
+			font-size: 2rem;
+			background-color: transparent;
+			outline: none;
+			color: $color-white;
+
+			&:focus {
+				outline: 2px solid $color-white;
+			}
+		}
+
+		&-input-icon {
+			position: absolute;
+			top: 47%;
+			right: 0;
+			transform: translate(-50%, -45%);
+			cursor: pointer;
+			transition: opacity 0.3s;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
 }
