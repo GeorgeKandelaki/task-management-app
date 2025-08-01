@@ -4,7 +4,7 @@
 	"main": "app.js",
 	"scripts": {
 		"watch:sass": "sass public/scss/main.scss public/css/style.css -w",
-		"start:dev": "nodemon server.js",
+		"start:dev": "node server.js",
 		"start:prod": "NODE_ENV=production nodemon server.js",
 		"parcel:watch": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
 	},
