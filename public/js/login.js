@@ -4,7 +4,7 @@ import { showAlert } from "./alerts";
 export async function login(email, password) {
 	try {
 		const res = await axios({
-			url: "http://95.104.13.159:3000/api/v1/user/login",
+			url: "https://task-management-app-nbw3.onrender.com/api/v1/user/login",
 			method: "POST",
 			data: {
 				email,
